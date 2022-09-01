@@ -17,7 +17,7 @@ public class ExcelGenerator {
 		String[] arrayOfSubject = newclass.getSubjects().split(",");
 		int id = newclass.getClassid();
 		List<String> listOfSubjects = Arrays.asList(arrayOfSubject);
-	try   
+	/*try   
 	{  
 	//declare file name to be create   
 	String filename = "./src/main/resources/Timetable"+id+".xls";  
@@ -59,7 +59,7 @@ public class ExcelGenerator {
 	row1.createCell(1).setCellValue("Mathew Parker");  
 	row1.createCell(2).setCellValue("22222222");  
 	row1.createCell(3).setCellValue("parker.mathew@gmail.com");  
-	row1.createCell(4).setCellValue("200000.00");  */
+	row1.createCell(4).setCellValue("200000.00");  
 	FileOutputStream fileOut = new FileOutputStream(filename);  
 	workbook.write(fileOut);  
 	//closing the Stream  
@@ -72,6 +72,6 @@ public class ExcelGenerator {
 	catch (Exception e)   
 	{  
 	e.printStackTrace();  
-	}  
+	}  */
 	}  
 }
