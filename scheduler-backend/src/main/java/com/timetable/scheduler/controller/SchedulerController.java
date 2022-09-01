@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.timetable.scheduler.model.Newclass;
 import com.timetable.scheduler.model.Teacher;
 import com.timetable.scheduler.repository.ClassRepository;
-import com.timetable.scheduler.repository.ExcelGenerator;
 import com.timetable.scheduler.repository.TeacherRepository;
 
 @RestController
@@ -82,10 +81,10 @@ public class SchedulerController {
 		}*/		
 	}
 	
-	@PostMapping("/excel")
+	/*@PostMapping("/excel")
 	public void checkIfWorking(@RequestBody Newclass newclass) {
 		ExcelGenerator excel= new ExcelGenerator();
 		excel.createExcel(newclass);
-	}
+	}*/
 	
 }
