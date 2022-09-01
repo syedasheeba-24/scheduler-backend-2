@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,24 +31,32 @@ public class SchedulerController {
 	 
 	 Newclass newclass = new Newclass();
 	
-	 
+	@CrossOrigin
 	@GetMapping("/class")
 	public List<com.timetable.scheduler.model.Newclass> getClasses() {
 		return classRepository.findAll();
 	}
+	
+	@CrossOrigin
 	@PostMapping("/class")
 	public com.timetable.scheduler.model.Newclass saveClass(@RequestBody com.timetable.scheduler.model.Newclass classBody) {
 		newclass= classBody;
 		return classRepository.save(classBody);
 	}
+	
+	@CrossOrigin
 	@GetMapping("/class/{id}")
 	public Optional<Newclass> getClassById(@PathVariable int id) {
 		return classRepository.findById(id);
 	}
+	
+	@CrossOrigin
 	@DeleteMapping("/class/{id}")
 	public void deleteClassById(@PathVariable int id) {
 		classRepository.deleteById(id);
 	}
+	
+	@CrossOrigin
 	@GetMapping("/teacher")
 	public List<Teacher> getTeachers() {
 		List<Teacher> listofTeachers = new ArrayList<Teacher>();
@@ -65,10 +74,13 @@ public class SchedulerController {
 		return listofTeachers;
 	}
 	
+	@CrossOrigin
 	@PostMapping("/teacher")
 	public Teacher saveTeacher(@RequestBody Teacher teacher) {
 		return teacherRepository.save(teacher);
 	}
+	
+	@CrossOrigin
 	@GetMapping("/teacher/{id}")
 	public Optional<Teacher> getTeacherById(@PathVariable int id) {
 		return teacherRepository.findById(id);
